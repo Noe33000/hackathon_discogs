@@ -7,23 +7,51 @@ angular.module("discogs")
     })
 
 
-function Home(Artist) {
+function Home(Artist, LastArtistReleases, Label) {
     let artistsId =  [
         "791",
         "65049",
         "133768",   // Big Pun
-        "41441",    // Bob Marley
-        "10584",    // Nina Simone
-        "15588",    // Gonzalez
-        "15588",    // Gonzalez
-        "15588",    // Gonzalez        
+        "767240",    // 5 Wards Juvenilez
+        // "10584",    // Nina Simone
+        // "15588",    // Gonzalez
+        // "114318",    // Bushwick Bill
+        // "661",    // Bill Laswell
+        // "82663",  // Hijack
+        // "10783"  // Beastie Boys
+
     ];
-    let a = [];
-    
+    let artists = [];
+    let labels = [];
+    let releases = [];
+
     angular.forEach(artistsId, function(v, k) {
-        a.push(Artist.get({id: v}));
+        let tmp = {};
+        // tmp.artist = Artist.get({id: v});
+        // tmp.release = c
+        tmp = Artist.get({id: v});
+        tmp.$promise.then(function(data) { // then get release
+            // backup
+            artists.push(data);
+            let tmpx = {};
+            tmpx = LastArtistReleases.get({artist_id : data.id});
+            tmpx.$promise.then(function(dataRelease) { 
+                releases[data.id] = dataRelease;
+            });
+        });
     });
-    
-    this.artists = a;
-    console.log(this.artists);
+    this.artists = artists;
+
+    this.artistsReleases = releases;
+
+    this.getArtistReleases = function(id) {
+        console.log(this.artistsReleases[id]);
+                return this.artistsReleases[id];
+        // this.artistReleases[id] = LastArtistReleases.get({artist_id : id});
+        // return 
+    }
+
+    this.label = function(id) {
+        return Label.get({ id : id});
+    }
 }
