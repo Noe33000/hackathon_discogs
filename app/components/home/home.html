@@ -1,4 +1,5 @@
 <div>
-    <div>PLouf: {{$ctrl.artist.name}}</div>
-<p>{{$ctrl.test}}</p>
+    <div ng-repeat="artist in artists">
+        {{ artist[0] }} plouf
+    </div>
 </div>

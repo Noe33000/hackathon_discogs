@@ -3,8 +3,7 @@
 angular.module("discogs")
 
     .factory("Artist", function($resource) {
-        return $resource('https://api.discogs.com/artists/:id');
-
+        return $resource('https://api.discogs.com/artists/:id')
     })
     .factory("Label", function($resource) {
         return $resource('https://api.discogs.com/labels/:id');
@@ -12,7 +11,3 @@ angular.module("discogs")
     .factory("Release", function($resource) {
         return $resource('https://api.discogs.com/releases/:id');
     });
-
-
-
-    

@@ -7,7 +7,22 @@ angular.module("discogs")
     })
 
 
-function Home(Artist) {
-    this.artist = Artist.get({id: "3422"});
-    this.test = "testIsOk";
+function Home($scope,Artist) {
+    let artistsId =  [
+        "791",
+        "65049"
+        // "133768",
+        // "41441",
+        // "10584",
+        // "",
+        // ""
+    ];
+    let a = [];
+    angular.forEach(artistsId, function(v, k) {
+        console.log(v);
+        a.push(Artist.get({id: v}));
+    });
+    this.artists = a;
+        console.log(this.artists);
+
 }
