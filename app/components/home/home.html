@@ -1,5 +1,8 @@
-<div>
-    <div ng-repeat="artist in artists">
-        {{ artist[0] }} plouf
-    </div>
+<div class="home-wrapper">
+    <div class="row">
+        <div class="artist-block col s3" ng-repeat="artist in $ctrl.artists">
+            <a ui-sref="artist({ id : artist.id })"><img class="artist-img" ng-src="{{ artist.images[0].uri }}" alt="{{ artist.id }}"/></a>
+                <h3 >{{ artist.namevariations[0] }}</h3>
+                <a ui-sref="label({ id : artist.label })"><p class="artist-img" ng-src="{{ artist.images[0].uri }}" alt="{{ artist.id }}"</p></a>
+        </div>
 </div>

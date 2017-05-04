@@ -1,0 +1,15 @@
+.home-wrapper {
+    background: #c1c1C1;
+    padding: 12px;
+}
+.artist-block {
+    height: 400px;
+    background: #535a66;
+    color: #fff;
+    text-align: center;
+}
+.artist-img {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
