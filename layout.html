@@ -9,13 +9,22 @@
 
     <header></header>
     <ui-view></ui-view>
+
     <!--On inclu angular en premier-->
     <script src="node_modules/angular/angular.min.js"></script>
     <!--On inclu le router dont angular se servira-->
     <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
 
     <!--On inclu notre application-->
     <script src="./app.js"></script>
+    <script src="./app/components/home/home.js"></script>
+    <script src="./app/components/header/header.js"></script>
+    <script src="./app/components/footer/footer.js"></script>
+    <script src="./app/components/artiste/artiste.js"></script>
+    <script src="./app/components/release/release.js"></script>
+    <script src="./app/components/label/label.js"></script>
+    <script src="./app/services/resources.factory.js"></script>
     <!--On inclu les components dont notre application se sert-->
 
     <!--On inclu aussi tout les service custom-->

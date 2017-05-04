@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-resource": "^1.6.4",
     "angular-ui-router": "^1.0.0",
     "live-server": "^1.2.0",
     "materialize-css": "^0.98.2"
