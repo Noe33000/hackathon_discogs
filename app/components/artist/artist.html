@@ -5,9 +5,11 @@
     <p>{{$ctrl.artist.profile}}</p>
 
     <h2>Releases :</h2>
+    
     <div ng-repeat="release in $ctrl.releases.releases">
         <img class="artist-img" ng-src="{{release.thumb}}" alt="album image" style="height: 100px; width: 100px">
-        <strong>Title : </strong>{{release.title}}<br>
+        <strong>Title : </strong>
+        <a ui-sref="release({ id : release.id })">{{release.title}}</a><br>
         <strong>Nombre de morceaux : </strong>{{release.format}}<br>        
         <strong>Year : </strong>{{release.year}}<br>
         <strong>Label : </strong>{{release.label}}<br>

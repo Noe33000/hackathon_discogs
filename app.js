@@ -19,9 +19,11 @@ angular.module("discogs", [
                 url: "/artist/:id",
                 component: "artist"
             },
-            // {
-            //     name: "pageNotFound",
-            // }
+            {
+                name: "release",
+                url: "/release/:id",
+                component: "release"
+            },
         ];
         $urlRouterProvider.otherwise("/home");
         states.forEach(function(state) {
