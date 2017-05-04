@@ -3,7 +3,8 @@
 
 angular.module("discogs", [
     // les dépendances externes
-    "ui.router"
+    "ui.router",
+    "ngResource"
 ])
 
     .config(function($stateProvider, $urlRouterProvider) {
@@ -17,10 +18,8 @@ angular.module("discogs", [
             //     name: "pageNotFound",
             // }
         ];
-        $urlRouterProvider.otherwise("/404");
+        $urlRouterProvider.otherwise("/home");
         states.forEach(function(state) {
             $stateProvider.state(state);
         })
-    })
-
-;
+    });
