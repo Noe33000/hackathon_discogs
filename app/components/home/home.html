@@ -2,8 +2,15 @@
     <div class="row">
         <div class="artist-block col s3" ng-repeat="artist in $ctrl.artists">
             <a ui-sref="artist({ id : artist.id })">
-                <img class="artist-img" ng-src="{{ artist.images[0].uri }}" alt="{{ artist.id }}"/>
-            </a>
-            <h3 >{{ artist.namevariations[0] }}</h3>
-        </div>
+                <div class="img-wrapp">
+                    <img class="artist-img" ng-src="{{ artist.images[0].uri }}" alt="{{ artist.id }}"/>
+                </div>
+                </a>
+                <h3>{{ artist.name }}</h3>
+                <h5>Last releases</h5>
+                 <ul ng-repeat="release in $ctrl.getArtistReleases(artist.id).releases">
+                     <li><a ui-sref="release({ id : release.id })"> {{ release.title }} </a><br>
+                       <small> {{ release.label || "no label" }}</small> </li>
+          </ul>
+      </div>
 </div>

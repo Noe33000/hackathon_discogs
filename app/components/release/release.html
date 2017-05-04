@@ -1,0 +1,32 @@
+<div>
+    <img class="release-img" ng-src="{{$ctrl.release.thumb}}" alt="album image" style="height: 200px; width: 200px">
+    <strong>Title :</strong> {{$ctrl.release.title}}
+    <br>
+    <strong>Description :</strong> {{$ctrl.release.videos[0].description}}
+    <br>
+    <strong>Année :</strong> {{$ctrl.release.released}}
+    <br>
+    <strong>Poid :</strong> {{$ctrl.release.estimated_weight}}g
+    <br>
+    <strong>Styles/Genres :</strong>
+    <span ng-repeat="style in $ctrl.release.styles">
+        {{style}} 
+    </span>/
+    <span ng-repeat="genre in $ctrl.release.genres">
+        {{genre}} 
+    </span>
+    <br>
+    <strong>Morceaux : </strong>
+    <br>
+    <div ng-repeat="track in $ctrl.release.tracklist">
+        {{track.position}} {{track.title}} - {{track.duration}}
+        <a ui-sref="artist({ id : track.artists[0].id })">
+            {{track.artists[0].name}}
+        </a>
+    </div>
+    <hr>
+    <div ng-repeat="artist in $ctrl.release.artists">
+
+    </div>
+    <hr> {{$ctrl.release}}
+</div>
