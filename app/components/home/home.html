@@ -1,6 +1,11 @@
 <div>
     <div ng-repeat="artist in $ctrl.artist">
-        <p>{{artist.id}}</p>
+        <a ui-sref="artist({artistId: artist.id})">
+            {{artist.namevariations[0]}}
+        </a>
     </div>
     <p>{{$ctrl.test}}</p>
 </div>
+
+
+<!--/:{{artist.id}}-->

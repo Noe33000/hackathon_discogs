@@ -13,10 +13,12 @@ angular.module("discogs", [
                 name: "home",
                 url: "/home",
                 component: "home"
+            },
+            {
+                name: "artist",
+                url: "/artist/{artistId}",
+                component: "artist"
             }
-            // {
-            //     name: "pageNotFound",
-            // }
         ];
         $urlRouterProvider.otherwise("/home");
         states.forEach(function(state) {
