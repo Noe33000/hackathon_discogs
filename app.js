@@ -24,9 +24,6 @@ angular.module("discogs", [
                 url: "/release/:id",
                 component: "release"
             },
-            // {
-            //     name: "pageNotFound",
-            // }
         ];
         $urlRouterProvider.otherwise("/home");
         states.forEach(function(state) {

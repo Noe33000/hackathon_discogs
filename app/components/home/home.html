@@ -10,8 +10,7 @@
                 <h5>Last releases</h5>
                  <ul ng-repeat="release in $ctrl.getArtistReleases(artist.id).releases">
                      <li><a ui-sref="release({ id : release.id })"> {{ release.title }} </a><br>
-                     <small> {{ release.label || "no label" }} </li>
-                 </ul>
-        </div>
+                       <small> {{ release.label || "no label" }}</small> </li>
+          </ul>
+      </div>
 </div>
-<!--rioAppFOrDiscog/0.1 +http://pumapi.com-->
