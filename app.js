@@ -24,6 +24,11 @@ angular.module("discogs", [
                 url: "/release/:id",
                 component: "release"
             },
+            {
+                name: "label",
+                url: "/label/:id",
+                component: "label"
+            },
         ];
         $urlRouterProvider.otherwise("/home");
         states.forEach(function(state) {

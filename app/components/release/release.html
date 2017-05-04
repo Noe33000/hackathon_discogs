@@ -6,6 +6,13 @@
     <br>
     <strong>Année :</strong> {{$ctrl.release.released}}
     <br>
+    <strong>Labels :</strong> 
+    <div ng-repeat="label in $ctrl.release.labels">
+        
+        <a ui-sref="label({ id : label.id })">
+            {{label.name}}
+        </a>
+    </div>
     <strong>Poid :</strong> {{$ctrl.release.estimated_weight}}g
     <br>
     <strong>Styles/Genres :</strong>
