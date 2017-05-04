@@ -7,7 +7,7 @@ angular.module("discogs")
     })
 
 
-function Home($resource) {
-    this.artist = Artist("3422");
+function Home(Artist) {
+    this.artist = Artist.get({id: "3422"});
     this.test = "testIsOk";
 }
