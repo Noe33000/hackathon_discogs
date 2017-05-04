@@ -1,15 +1,25 @@
+h5 {
+    font-size: 16px;
+}
 .home-wrapper {
     background: #c1c1C1;
     padding: 12px;
 }
 .artist-block {
-    height: 400px;
+    height: 600px;
     background: #535a66;
     color: #fff;
     text-align: center;
 }
+.img-wrapp {
+    display: block;
+    width: 92%;
+    max-height: 150px;    
+    margin: 20px auto;
+    overflow: hidden;
+}
 .artist-img {
     display: block;
-    width: 80%;
+    width: inherit;
     margin: 0 auto;
 }

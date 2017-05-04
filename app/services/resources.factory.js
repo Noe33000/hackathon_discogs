@@ -8,6 +8,6 @@ angular.module("discogs")
     .factory("Label", function($resource) {
         return $resource('https://api.discogs.com/labels/:id', {id: '@id', key: "fpGYiblwrVtRlaJQmfoX", secret: "LPlyPcMzpdqusNFZuoTSVaqeqZDCKzxf"});
     })
-    .factory("Release", function($resource) {
-        return $resource('https://api.discogs.com/releases/:id', {id: '@id', key: "fpGYiblwrVtRlaJQmfoX", secret: "LPlyPcMzpdqusNFZuoTSVaqeqZDCKzxf"});
+    .factory("LastArtistReleases", function($resource) {
+        return $resource('https://api.discogs.com/artists/:artist_id/releases', {artist_id: '@artist_id', sort: 'year', sort_order : 'desc', page: "1", per_page: "3", key: "fpGYiblwrVtRlaJQmfoX", secret: "LPlyPcMzpdqusNFZuoTSVaqeqZDCKzxf"});
     });

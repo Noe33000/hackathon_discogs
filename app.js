@@ -19,6 +19,11 @@ angular.module("discogs", [
                 url: "/artist/:id",
                 component: "artist"
             },
+            {
+                name: "release",
+                url: "/release/:id",
+                component: "release"
+            },
             // {
             //     name: "pageNotFound",
             // }

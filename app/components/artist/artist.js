@@ -2,7 +2,7 @@
 
 angular.module("discogs")
     .component("artist", {
-        templateUrl: "app/components/home/home.html",
+        templateUrl: "app/components/artist/artist.html",
         controller: ArtistDetail
     })
 
