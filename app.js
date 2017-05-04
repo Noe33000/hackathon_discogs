@@ -13,7 +13,12 @@ angular.module("discogs", [
                 name: "home",
                 url: "/home",
                 component: "home"
-            }
+            },
+            {
+                name: "artist",
+                url: "/artist/:id",
+                component: "artist"
+            },
             // {
             //     name: "pageNotFound",
             // }

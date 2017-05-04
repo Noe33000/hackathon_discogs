@@ -8,24 +8,22 @@ angular.module("discogs")
 
 
 function Home(Artist) {
-    let artists = [
-        "791",      // Mr Oizo
-        "65049",   // Notorious
-        //"133768",   // Big Pun
-        //"41441",    // Bob Marley
-        //"10584",    // Nina Simone
-        //"15588",    // Gonzalez
-        //"3122966"   // Fauve
+    let artistsId =  [
+        "791",
+        "65049",
+        "133768",   // Big Pun
+        "41441",    // Bob Marley
+        "10584",    // Nina Simone
+        "15588",    // Gonzalez
+        "15588",    // Gonzalez
+        "15588",    // Gonzalez        
     ];
-    let artistsLength = artists.length;
+    let a = [];
     
-    this.artist = [];
+    angular.forEach(artistsId, function(v, k) {
+        a.push(Artist.get({id: v}));
+    });
     
-    for(let i = 0; i < artistsLength; i++){
-        this.artist.push(Artist.get({id: artists[i]}));
-    }
-
-    this.test = "testIsOk";
-
-
+    this.artists = a;
+    console.log(this.artists);
 }
