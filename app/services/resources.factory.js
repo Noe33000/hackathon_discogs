@@ -16,4 +16,7 @@ angular.module("discogs")
     })
     .factory("LastArtistReleases", function($resource) {
         return $resource('https://api.discogs.com/artists/:artist_id/releases', {artist_id: '@artist_id', sort: 'year', sort_order : 'desc', page: "1", per_page: "3", key: "fpGYiblwrVtRlaJQmfoX", secret: "LPlyPcMzpdqusNFZuoTSVaqeqZDCKzxf"});
+    })
+    .factory("Search", function($resource) {
+        return $resource('');
     });
