@@ -7,18 +7,18 @@ angular.module("discogs")
     })
 
 
-function Header() {
+function Header(Search, $state, $stateParams) {
     this.selectOptions =  [
         {
-            value: "artists",
+            value: "artist",
             name: "Artist"
         },
         {
-            value: "releases",
+            value: "release",
             name: "Album"
         },
         {
-            value: "labels",
+            value: "label",
             name: "Label"
         }
     ];
@@ -26,8 +26,41 @@ function Header() {
 
     this.search = {
         type: this.selectOptions[0].value,
-        gebre: "",
+        query: "",
+        genre: "",
         year: "",
-        country: ""
+        country: "",
+        artist: "",
+        release_title: ""
     };
+
+    this.startSearch = function() {
+        let rep = {};
+        angular.forEach(this.search, function(v, k) {
+            if( v !== "" ) {
+                rep[k] = v;
+                 if( k === 'type' ) {
+                     switch(v) {
+                         case "artist":
+                         rep.artist = this.search.query;
+                         break;
+                         case "release":
+                         rep.release_title = this.search.query;
+                         break;
+                         case "label":
+                         rep.label = this.search.query;
+                         break;
+                     }
+                 }
+            }
+        }, this);
+
+        Search.get(rep).$promise.then(
+            function( results ) {
+                $state.go('search', { result: results });        
+            });
+
+
+    // /database/search?q={query}&{?type,title,release_title,credit,artist,anv,label,genre,style,country,year,format,catno,barcode,track,submitter,contributor}
+    }
 }
